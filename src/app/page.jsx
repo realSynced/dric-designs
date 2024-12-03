@@ -1,7 +1,6 @@
 'use client'
 import Image from "next/image";
 import Navbar from "@/app/assets/components/Navbar"
-import Particles from "@/app/assets/components/Particles"
 
 import { Logo, LogoText } from "./assets/images";
 
