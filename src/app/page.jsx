@@ -2,16 +2,17 @@
 import Image from "next/image";
 import Navbar from "@/app/assets/components/Navbar"
 import SmoothScroll from "@/app/assets/components/SmoothScroll"
-import CustomCursor from "@/app/assets/ui/CustomCursor"
+import { useElasticMouse } from "@/app/assets/ui/useElasticMouse";
 
 import { Logo, LogoText, Rocketship, TaperedLine, Curve, StarryParticles } from "./assets/images";
 import { inria_serif, hurricane } from "./assets/fonts";
 
 export default function Home() {
+  const { onMouseMove } = useElasticMouse('cursor');
 
   return (
-    <SmoothScroll>
-      {/* <CustomCursor/> */}
+    <SmoothScroll onMouseMove={onMouseMove}>
+      <div id="cursor" />
       <video className="z-0 fixed top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
             <source src="/videos/particles.mp4" type="video/mp4" />
             Your browser does not support the video tag.
