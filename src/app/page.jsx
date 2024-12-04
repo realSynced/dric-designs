@@ -44,6 +44,36 @@ export default function Home() {
       delay: 1,
       ease: "power1.out"
     })
+    // Rocketship
+    const maxRotation = 20; // Y axis
+    const maxRotation2 = 15; // X axis
+    const maxRotation3 = 15; // Z axis
+    const setRotation = gsap.quickSetter(".rocketship", "rotationY", "deg");
+    const setRotation2 = gsap.quickSetter(".rocketship", "rotationX", "deg");
+    const setRotation3 = gsap.quickSetter(".rocketship", "rotationZ", "deg");
+    let getPercent;
+    function resize(){
+      getPercent = gsap.utils.mapRange(0, innerWidth, -1, 1);
+    }
+
+    window.addEventListener("mousemove", e => {
+      const percent = getPercent(e.pageX);
+      const percent2 = getPercent(e.pageY);
+      const percent3 = (getPercent(e.pageX) + getPercent(e.pageY));
+      setRotation(percent * maxRotation);
+      setRotation2(percent2 * maxRotation2);
+      setRotation3(percent3 * maxRotation3);
+    });
+    
+    window.addEventListener("resize", resize);
+    resize();
+
+    gsap.set(".rocketship", {transformOrigin: "center center"})
+
+
+    gsap.from(".rocketship", {
+
+    })
   })
 
 
@@ -71,7 +101,7 @@ export default function Home() {
             <p className={`${inria_serif.className} text-sm text-white font-medium translate-y-8 slogan`}>Modern, Exquisite Websites.</p>
           </div>
         </section>
-        <section className="flex h-screen flex-col items-center justify-center bg-[#111111] "> {/* bg-[#111111] */}
+        <section className="perspective flex h-screen flex-col items-center justify-center bg-[#111111] "> {/* bg-[#111111] */}
           <div className="z-10 bg-[#D9D9D9] drop-shadow-glow w-1/2 h-2/5 mb-4">
             {/* video */}
           </div>
@@ -83,7 +113,7 @@ export default function Home() {
             </p>
           </div>
           <Image src={Rocketship} alt="Rocketship" layout="fixed" width={950} height={950} objectFit="cover"
-            className="absolute z-0 -translate-x-10 rotate-[30deg] blur-lg opacity-60 contrast-125 select-none"
+            className="rocketship absolute z-0 -translate-x-10 rotate-[30deg] blur-lg opacity-60 contrast-125 select-none"
           />
         </section>
 
