@@ -3,19 +3,54 @@ import Image from "next/image";
 import Navbar from "@/app/assets/components/Navbar"
 import SmoothScroll from "@/app/assets/components/SmoothScroll"
 import CustomCursor from "@/app/assets/ui/CustomCursor"
-// import { useElasticMouse } from "@/app/assets/ui/useElasticMouse";
 
 import { Logo, LogoText, Rocketship, TaperedLine, Curve, StarryParticles } from "./assets/images";
 import { inria_serif, hurricane } from "./assets/fonts";
 
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { CustomEase } from "gsap/CustomEase";
+
+
+gsap.registerPlugin(useGSAP, CustomEase);
+
 export default function Home() {
-  // const { onMouseMove } = useElasticMouse('cursor');
+
+  useGSAP( () => {
+    // Logo
+    gsap.from(".logo", {
+      scale: 0.75,
+      opacity: 0,
+    })
+    gsap.to(".logo", {
+      opacity: 1,
+      duration: 2.5,
+      rotateY: 720,
+      ease: "expo.inOut",
+      transformOrigin: "center",
+    })
+    gsap.to(".logo", {
+      scale: 1,
+      ease: "power1.inOut",
+      transformOrigin: "center",
+      delay: 1
+    })
+
+    // Slogan
+    gsap.from(".slogan", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+      ease: "power1.out"
+    })
+  })
+
+
 
   return (
     <SmoothScroll>
-    {/* <SmoothScroll onMouseMove={onMouseMove}> */}
       <CustomCursor/>
-      {/* <div id="cursor" /> */}
       <video className="z-0 fixed top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
             <source src="/videos/particles.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -31,9 +66,9 @@ export default function Home() {
               className="5"
             />
             </div> */}
-            <Image src={Logo} alt="Logo" width={200} height={200} className="select-none"/>
-            <Image src={LogoText} alt="Logo" width={200} height={200} className="select-none"/>
-            <p className={`${inria_serif.className} text-sm text-white font-medium translate-y-8`}>Modern, Exquisite Websites.</p>
+            <Image src={Logo} alt="Logo" width={200} height={200} className="select-none logo scale-75"/>
+            <Image src={LogoText} alt="Logo" width={200} height={200} className="select-none logo"/>
+            <p className={`${inria_serif.className} text-sm text-white font-medium translate-y-8 slogan`}>Modern, Exquisite Websites.</p>
           </div>
         </section>
         <section className="flex h-screen flex-col items-center justify-center bg-[#111111] "> {/* bg-[#111111] */}
