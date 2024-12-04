@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Navbar from "@/app/assets/components/Navbar"
 import SmoothScroll from "@/app/assets/components/SmoothScroll"
+import CustomCursor from "@/app/assets/ui/CustomCursor"
+
 import { Logo, LogoText, Rocketship, TaperedLine, Curve, StarryParticles } from "./assets/images";
 import { inria_serif, hurricane } from "./assets/fonts";
 
@@ -9,7 +11,7 @@ export default function Home() {
 
   return (
     <SmoothScroll>
-      {/* <CustomScrollbar/> */}
+      {/* <CustomCursor/> */}
       <video className="z-0 fixed top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
             <source src="/videos/particles.mp4" type="video/mp4" />
             Your browser does not support the video tag.

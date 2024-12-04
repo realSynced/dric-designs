@@ -19,3 +19,25 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.fixedcursor {
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+}
+
+
+/* path/to/CustomCursor.css */
+.circle {
+  position: fixed;
+  width: 20px; /* Base size */
+  height: 20px; /* Base size */
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5); /* Example color */
+  pointer-events: none; /* Prevent the circle from blocking mouse events */
+  transform: translate(-50%, -50%); /* Center the circle */
+  transition: transform 0.1s ease; /* Smooth transition for scaling */
+  z-index: 9999; /* Ensure it appears above other elements */
+
+}
+
