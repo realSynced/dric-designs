@@ -6,10 +6,11 @@ import Link from "next/link";
 import { Logo } from "@/app/assets/images";
 import { inria_serif } from "@/app/assets/fonts";
 
-
+import { useLenis } from "@studio-freight/react-lenis";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 export default function Navbar() {
+  const lenis = useLenis();
 
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
