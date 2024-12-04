@@ -66,8 +66,8 @@ export default function Home() {
               className="5"
             />
             </div> */}
-            <Image src={Logo} alt="Logo" width={200} height={200} className="select-none logo scale-75"/>
-            <Image src={LogoText} alt="Logo" width={200} height={200} className="select-none logo"/>
+            <Image src={Logo} alt="Logo" width={200} height={200} className="opacity-0 select-none logo scale-75"/>
+            <Image src={LogoText} alt="Logo" width={200} height={200} className="opacity-0 select-none logo"/>
             <p className={`${inria_serif.className} text-sm text-white font-medium translate-y-8 slogan`}>Modern, Exquisite Websites.</p>
           </div>
         </section>
