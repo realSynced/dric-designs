@@ -38,3 +38,8 @@ body {
   pointer-events: none;
   mix-blend-mode: difference;
 }
+
+.scaleProperty {
+  /* transition-all duration-200 ease-in-out */
+  transition: all 300ms ease-in-out;
+}

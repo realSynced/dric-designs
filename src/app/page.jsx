@@ -31,7 +31,7 @@ export default function Home() {
     })
     gsap.to(".logo", {
       scale: 1,
-      ease: "power1.inOut",
+      ease: "expo.inOut",
       transformOrigin: "center",
       delay: 1
     })
@@ -43,6 +43,10 @@ export default function Home() {
       duration: 1,
       delay: 1,
       ease: "power1.out"
+    })
+    gsap.to(".slogan", {
+      opacity: 1,
+      ease: "power1.inOut",
     })
     // Rocketshipp
     const maxRotation = 20; // Y axis
@@ -95,7 +99,7 @@ export default function Home() {
             <source src="/videos/particles.mp4" type="video/mp4" />
             Your browser does not support the video tag.
       </video>
-      <main className="z-10  relative text-white px-20" suppressHydrationWarning >
+      <main className="z-10 cursorcontainer relative text-white px-20" suppressHydrationWarning >
         <Navbar/>
         
         
@@ -108,22 +112,22 @@ export default function Home() {
             </div> */}
             <Image src={Logo} alt="Logo" width={200} height={200} className="opacity-0 select-none logo scale-75"/>
             <Image src={LogoText} alt="Logo" width={200} height={200} className="opacity-0 select-none logo"/>
-            <p className={`${inria_serif.className} text-sm text-white font-medium translate-y-8 slogan`}>Modern, Exquisite Websites.</p>
+            <p className={`${inria_serif.className} opacity-0 text-sm text-white font-medium translate-y-8 slogan`}>Modern, Exquisite Websites.</p>
           </div>
         </section>
         <section className="perspective flex h-screen flex-col items-center justify-center bg-[#111111]/95 "> {/* bg-[#111111] */}
           <div className="z-10 bg-[#D9D9D9] drop-shadow-glow w-1/2 h-2/5 mb-4">
             {/* video */}
           </div>
-          <div className="z-10 w-1/2 px-12 flex flex-col justify-center items-centerspace-y-2 text-center">
+          <div className=" z-10 w-1/2 px-12 flex flex-col justify-center items-centerspace-y-2 text-center">
             <h1 className="text-lg font-semibold">Look up. The sky's the limit</h1>
             <p className="text-base font-medium">At Dric Designs, the sky’s the limit. Any design, website, or video
               is possible, and we're here to make it happen. With your vision and our execution,
               we can make your dreams come true.
             </p>
           </div>
-          <Image src={Rocketship} alt="Rocketship" layout="fixed" width={950} height={950} objectFit="cover"
-            className="rocketship absolute z-0 -translate-x-10 rotate-[30deg] blur-lg opacity-60 contrast-125 select-none"
+          <Image src={Rocketship} alt="Rocketship" layout="fixed" width={850} height={850} objectFit="cover"
+            className="rocketship overflow-clip absolute z-0 -translate-x-10 rotate-[30deg] blur-lg opacity-60 contrast-125 select-none"
           />
         </section>
 
@@ -145,7 +149,7 @@ export default function Home() {
           />
           <div className="z-10 px-12 w-full h-full flex flex-col items-center justify-center">
             <div className="flex flex-col">
-              <h1 className={`${hurricane.className} z-10 text-8xl font-bold mb-12`}>Past Websites & Designs</h1>
+              <h1 className={`${inria_serif.className} z-10 text-8xl font-bold mb-12`}>Past Websites & Designs</h1>
               <Image src={TaperedLine} alt="Tapered Line" layout="fixed" width={230} height={230} objectFit="cover"
                 className="absolute z-0 translate-y-16 translate-x-[31rem] select-none"
               />
@@ -174,7 +178,9 @@ export default function Home() {
             <div className="z-10 py-24 flex flex-col space-y-4 items-center">
               <h1 className="text-3xl font-bold">Check Other Designs</h1>
               <button 
-              className="bg-[#272727] hover:bg-[#1f1f1f] hover:scale-105 py-4 px-5 text-white font-bold rounded-2xl w-1/2 transition-all duration-200 ease-in-out ">Visit</button>
+              className="bg-[#272727] hover:bg-[#1f1f1f] hover:scale-105 py-4 px-5 text-white font-bold rounded-2xl w-1/2 transition-all duration-200 ease-in-out ">
+                Visit
+              </button>
             </div>
           </div>
         </section>
@@ -187,7 +193,7 @@ export default function Home() {
               <h1 className="text-4xl font-bold">Ready to Take Your Business</h1>
               <h1 className="text-4xl font-bold">to The NEXT Level?</h1>
             </div>
-              <button className="z-10 bg-[#272727] hover:bg-[#1f1f1f] py-4 px-5 text-white font-bold  w-2/6 transition-all duration-200 ease-in-out ">
+              <button className="z-10 bg-[#272727] hover:bg-[#1f1f1f] py-4 px-5 text-white font-bold  w-2/6 rounded-2xl transition-all duration-200 ease-in-out ">
                 Schedule an Appointment
               </button>
           </div>
