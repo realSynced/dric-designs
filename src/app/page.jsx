@@ -50,11 +50,11 @@ export default function Home() {
     })
     // Rocketshipp
     const maxRotation = 20; // Y axis
-    const maxRotation2 = 15; // X axis
-    const maxRotation3 = 15; // Z axis
+    // const maxRotation2 = 15; // X axis
+    // const maxRotation3 = 15; // Z axis
     const setRotation = gsap.quickSetter(".rocketship", "rotationY", "deg");
-    const setRotation2 = gsap.quickSetter(".rocketship", "rotationX", "deg");
-    const setRotation3 = gsap.quickSetter(".rocketship", "rotationZ", "deg");
+    // const setRotation2 = gsap.quickSetter(".rocketship", "rotationX", "deg");
+    // const setRotation3 = gsap.quickSetter(".rocketship", "rotationZ", "deg");
     let getPercent;
     function resize(){
       getPercent = gsap.utils.mapRange(0, innerWidth, -1, 1);
@@ -62,11 +62,11 @@ export default function Home() {
 
     window.addEventListener("mousemove", e => {
       const percent = getPercent(e.pageX);
-      const percent2 = getPercent(e.pageY);
-      const percent3 = (getPercent(e.pageX) + getPercent(e.pageY));
+      // const percent2 = getPercent(e.pageY);
+      // const percent3 = (getPercent(e.pageX) + getPercent(e.pageY));
       setRotation(percent * maxRotation);
-      setRotation2(percent2 * maxRotation2);
-      setRotation3(percent3 * maxRotation3);
+      // setRotation2(percent2 * maxRotation2);
+      // setRotation3(percent3 * maxRotation3);
     });
     
     window.addEventListener("resize", resize);
@@ -95,7 +95,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <CustomCursor/>
-      <video className="z-0 fixed top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
+      <video className="z-0 fixed top-0 left-0 w-full h-full object-cover opacity-70" autoPlay muted loop>
             <source src="/videos/particles.mp4" type="video/mp4" />
             Your browser does not support the video tag.
       </video>
@@ -193,8 +193,8 @@ export default function Home() {
               <h1 className="text-4xl font-bold">Ready to Take Your Business</h1>
               <h1 className="text-4xl font-bold">to The NEXT Level?</h1>
             </div>
-              <button className="z-10 bg-[#272727] hover:bg-[#1f1f1f] py-4 px-5 text-white font-bold  w-2/6 rounded-2xl transition-all duration-200 ease-in-out ">
-                Schedule an Appointment
+              <button className="z-10 bg-[#272727] hover:bg-[#1f1f1f] py-4 px-5 text-white font-bold w-2/6 rounded-2xl transition-all duration-200 ease-in-out ">
+                Schedule a Call
               </button>
           </div>
         </section>
